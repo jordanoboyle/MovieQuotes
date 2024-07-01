@@ -1,5 +1,8 @@
 import axios from "axios"
 import { useState } from "react"
+import { QuotesIndex } from "./QuotesIndex"
+
+
 
 export function Content() {
   const [quoteData, setQuoteData] = useState([])
@@ -18,7 +21,8 @@ export function Content() {
     <main>
       <h1>Welcome to React!</h1>
       <button onClick={handleQuoteData}>get the data</button>
-    {/* <p>{quoteData}</p> */}
+      <QuotesIndex quotes={quoteData}/>
+    
     </main>
   )
 }
