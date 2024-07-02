@@ -27,15 +27,42 @@ html {
   border: 3px solid green;
 } */
 
-.PaginateButton {
-  background-color: #04AA6D;
-  /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
+/* .page-number {
+  font-size: large;
+  font-weight: 900;
+
+} */
+
+.PaginationListButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  gap: 20px;
+}
+
+.PaginationListButtons .page-number {
   font-size: 16px;
-  position: ;
+  font-weight: 600;
+  color: #00a8ff;
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.PaginationListButtons .page-number:hover {
+  color: #fff;
+  background: #00a8ff;
+}
+
+.PaginationListButtons .active {
+  color: #fff;
+  background: #00a8ff;
+}
+
+.PaginationListButtons .active:hover {
+  color: #00a8ff;
+  background: #fff;
 }

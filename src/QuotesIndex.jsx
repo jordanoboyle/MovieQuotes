@@ -18,11 +18,11 @@ export function QuotesIndex(props) {
   }
   const goNextPage = () => {
     console.log("going to the next page")
-    if (currentPage !== Math.ceil(props.quote.length / quotesPerPage)) {
+    if (currentPage !== Math.ceil(props.quotes.length / quotesPerPage)) {
       setCurrentPage(currentPage + 1)
     }
   }
-  const paginate = () => {
+  const paginate = (pageNumber) => {
     setCurrentPage(pageNumber)
   }
 
@@ -30,7 +30,7 @@ export function QuotesIndex(props) {
     <div>
       <h1>This is from QuotesIndex</h1>
       <div className="QuoteCardGrid">
-      {props.quotes.map((quoteData, index) =>(
+      {currentQuotes.map((quoteData, index) =>(
         <div key={index} className="QuoteCardGridItem">
           <p>Category: {quoteData.theme}</p>
           <p>Title: {quoteData.context}</p>
@@ -48,7 +48,7 @@ export function QuotesIndex(props) {
       nextPage={goNextPage}
       previousPage={goPreviousPage}
       currentPage={currentPage}
-      pagiante={paginate}
+      paginate={paginate}
       /> 
     </div>
   )
