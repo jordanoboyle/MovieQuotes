@@ -42,7 +42,7 @@ export function QuotesIndex(props) {
           {searchTerm}
         </p>
       <div className="QuoteCardGrid">
-      {currentQuotes.map((quoteData, index) =>(
+      {currentQuotes.filter(element => element.quote.toLowerCase().includes(searchTerm.toLocaleLowerCase())).map((quoteData, index) =>(
         <div key={index} className="QuoteCardGridItem">
           <p>Category: {quoteData.theme}</p>
           <p>Title: {quoteData.context}</p>
