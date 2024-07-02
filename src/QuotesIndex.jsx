@@ -12,9 +12,18 @@ export function QuotesIndex(props) {
 
   const goPreviousPage = () => {
     console.log("going the previous page!")
+    if (currentPage !== 1) {
+      setCurrentPage(currentPage - 1)
+    }
   }
   const goNextPage = () => {
     console.log("going to the next page")
+    if (currentPage !== Math.ceil(props.quote.length / quotesPerPage)) {
+      setCurrentPage(currentPage + 1)
+    }
+  }
+  const paginate = () => {
+    setCurrentPage(pageNumber)
   }
 
   return(
@@ -30,9 +39,16 @@ export function QuotesIndex(props) {
         </div>
       ))}
       </div>
+      <br/>
+      <br/>
+      <br/>
       <Paginate
+      quotesPerPage={quotesPerPage}
+      totalQuotes={props.quotes.length}
       nextPage={goNextPage}
       previousPage={goPreviousPage}
+      currentPage={currentPage}
+      pagiante={paginate}
       /> 
     </div>
   )

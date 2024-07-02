@@ -19,13 +19,13 @@ html {
   text-align: justify;
 }
 
-.PaginateButtonContainer {
+/* .PaginateButtonContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 200px;
   border: 3px solid green;
-}
+} */
 
 .PaginateButton {
   background-color: #04AA6D;
