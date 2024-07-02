@@ -18,7 +18,7 @@ const Paginate = ({quotesPerPage, totalQuotes, nextPage, previousPage, currentPa
       <button onClick={printInformation}>Click Here</button>
         <div>
           <ul className="PaginationListButtons">
-            <li className="page-numbers" onClick={previousPage}>
+            <li className="page-number active" onClick={previousPage}>
               Prev
             </li>
         {pageNumbers.map((number) => 
@@ -29,7 +29,7 @@ const Paginate = ({quotesPerPage, totalQuotes, nextPage, previousPage, currentPa
               Page Number: {number}  
             </li> 
         )}
-            <li className="page-numbers" onClick={nextPage}>
+            <li className="page-number active" onClick={nextPage}>
               Next
             </li>
           </ul>

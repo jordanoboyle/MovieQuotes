@@ -1,0 +1,9 @@
+- provide a client side search bar to filter through the quotes. 
+  - make an input search area. ##
+  - render a search button ##
+  - render search by specific input. 
+    -will this break pagination?
+    -if so, how and can we adjust currentPage to adjust?
+  -track user inputs in search bar
+  - make search instantly dynamic (this could break pagination)
+    - if this breaks pagination, lets switch this to a new "page" and render index again
