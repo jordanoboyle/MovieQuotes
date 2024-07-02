@@ -10,6 +10,13 @@ export function QuotesIndex(props) {
   const indexOfFirstQuote = indexOfLastQuote - quotesPerPage
   const currentQuotes = props.quotes.slice(indexOfFirstQuote, indexOfLastQuote)
 
+  const goPreviousPage = () => {
+    console.log("going the previous page!")
+  }
+  const goNextPage = () => {
+    console.log("going to the next page")
+  }
+
   return(
     <div>
       <h1>This is from QuotesIndex</h1>
@@ -23,7 +30,10 @@ export function QuotesIndex(props) {
         </div>
       ))}
       </div>
-      <Paginate /> 
+      <Paginate
+      nextPage={goNextPage}
+      previousPage={goPreviousPage}
+      /> 
     </div>
   )
 }
