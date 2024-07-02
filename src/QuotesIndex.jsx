@@ -3,7 +3,12 @@ import {useState, useEffect} from "react"
 
 
 export function QuotesIndex(props) {
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const [quotesPerPage] = useState(6)
+  // ...
+  const indexOfLastQuote  = currentPage * quotesPerPage;
+  const indexOfFirstQuote = indexOfLastQuote - quotesPerPage
+  const currentQuotes = props.quotes.slice(indexOfFirstQuote, indexOfLastQuote)
 
   return(
     <div>
