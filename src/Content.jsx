@@ -21,7 +21,6 @@ export function Content() {
   return (
     <main>
       <h1>Welcome to React!</h1>
-      {/* <button onClick={handleQuotesIndex}>push</button> */}
       <QuotesIndex quotes={quoteData}/>
     </main>
   )
