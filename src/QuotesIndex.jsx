@@ -10,6 +10,8 @@ export function QuotesIndex(props) {
   const indexOfFirstQuote = indexOfLastQuote - quotesPerPage
   const currentQuotes = props.quotes.slice(indexOfFirstQuote, indexOfLastQuote)
 
+  const [searchTerm, setSearchTerm] = useState('');
+
   const goPreviousPage = () => {
     console.log("going the previous page!")
     if (currentPage !== 1) {
@@ -29,8 +31,19 @@ export function QuotesIndex(props) {
   return(
     <div>
       <h1>This is from QuotesIndex</h1>
+        <p>Search Quotes:
+          <input 
+          type="text" 
+          placeholder="Search by quote..." 
+          value={searchTerm} 
+          onChange={event => setSearchTerm(event.target.value)} />
+        </p>
+        <p>
+          {searchTerm}
+        </p>
+      {props.error && <div> Error: {props.error.message}</div> }
       <div className="QuoteCardGrid">
-      {currentQuotes.map((quoteData, index) =>(
+      {currentQuotes.filter(element => element.quote.toLowerCase().includes(searchTerm.toLocaleLowerCase())).map((quoteData, index) =>(
         <div key={index} className="QuoteCardGridItem">
           <p>Category: {quoteData.theme}</p>
           <p>Title: {quoteData.context}</p>
