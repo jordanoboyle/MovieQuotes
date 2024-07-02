@@ -1,5 +1,5 @@
-import {useState, useEffect} from "react"
-
+import {useState, useEffect} from "react";
+import Paginate from "./Paginate";
 
 
 export function QuotesIndex(props) {
@@ -23,6 +23,7 @@ export function QuotesIndex(props) {
         </div>
       ))}
       </div>
+      <Paginate /> 
     </div>
   )
 }
