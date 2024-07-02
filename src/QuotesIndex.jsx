@@ -41,6 +41,7 @@ export function QuotesIndex(props) {
         <p>
           {searchTerm}
         </p>
+      {props.error && <div> Error: {props.error.message}</div> }
       <div className="QuoteCardGrid">
       {currentQuotes.filter(element => element.quote.toLowerCase().includes(searchTerm.toLocaleLowerCase())).map((quoteData, index) =>(
         <div key={index} className="QuoteCardGridItem">
